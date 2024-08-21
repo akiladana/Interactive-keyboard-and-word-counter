@@ -1,5 +1,26 @@
 const btnElement = document.querySelectorAll('.element-in-button');
 
+function countWord(){
+    let inputElement = document.querySelector('.js-input-element');
+    const inputValue = inputElement.value;
+    let wordCount = 0;
+
+    for (let i =1; i<inputValue.length; i++){
+
+        if(inputValue[i] === " "){
+            wordCount ++;
+            console.log('hi')
+            
+        }else if(wordCount === 0 && inputValue.length !== 0){
+            wordCount++;
+            console.log('sec')
+        }
+        
+    }
+    document.querySelector('.js-counted-words').innerHTML = `${wordCount}`;
+    document.querySelector('.css-final-out').classList.add('css-counted-words-after');
+}
+
 function keyValueCheck(event) {
     const capsElement = document.querySelector('.js-capslock');
     let capsValue = true;

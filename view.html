@@ -9,8 +9,18 @@
 </head>
 
 <body>
-    <input onkeydown="
-    keyValueCheck(event.key)" class="value-check">
+    <div>
+        <textarea class="js-input-element css-input-element" placeholder="Enter your text here..." onkeydown="
+    keyValueCheck(event.key)"></textarea>
+    </div>
+    <button onclick="
+    countWord();
+    " class="css-click-button">Count words</button>
+
+    <div class="css-final-out">
+        <p>Word count is: </p>
+        <p class="js-counted-words css-counted-words"> </p>
+    </div>
 
     <div class="container">
         <div class="first-row">
@@ -112,7 +122,7 @@
                 <span>'</span>
             </div>
             <div class="element-in-button js-capslock ">Capslock</div>
-            
+
         </div>
 
         <div class="first-row">
@@ -125,7 +135,7 @@
             <div class="element-in-button js-letter-c">n</div>
             <div class="element-in-button js-letter-c">m</div>
             <div class="element-in-button ">
-                <span><</span>
+                <span> < </span>
                 <span>,</span>
             </div>
             <div class="element-in-button ">
