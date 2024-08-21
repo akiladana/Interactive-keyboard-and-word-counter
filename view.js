@@ -2,19 +2,25 @@ const btnElement = document.querySelectorAll('.element-in-button');
 
 function keyValueCheck(event) {
     const capsElement = document.querySelector('.js-capslock');
-    console.log(event)
-    capsElement.classList.forEach(function (classCaps) {
-        if (event === 'CapsLock' && 'css-letter-cp' !== classCaps) {
-            letterBtnElement = document.querySelectorAll('.js-letter-c');
-            letterBtnElement.forEach(function (letter) {
-                letter.innerHTML = letter.innerHTML.toUpperCase();
-                capsElement.classList.add('css-letter-cp');
-
-            })
-        }else{
-            capsElement.classList.remove('css-letter-cp');
-        }
-    });
+    let capsValue = true;
+    if (event === 'CapsLock'){
+        capsElement.classList.forEach(function (classCaps) {
+            if (event === 'CapsLock' && 'css-letter-cp' !== classCaps) {
+                letterBtnElement = document.querySelectorAll('.js-letter-c');
+                letterBtnElement.forEach(function (letter) {
+                    letter.innerHTML = letter.innerHTML.toUpperCase();
+                    capsElement.classList.add('css-letter-cp');
+                    capsValue = false;
+                })
+            } else {
+                capsElement.classList.remove('css-letter-cp');
+                letterBtnElement.forEach(function (letter) {
+                    letter.innerHTML = letter.innerHTML.toLowerCase();
+                })
+            }
+        });
+    }
+    
 
     // btnElement.classList.add('after-click');
     btnElement.forEach(function (data) {
